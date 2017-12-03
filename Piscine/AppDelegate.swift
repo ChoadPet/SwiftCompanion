@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Swift_Companion
+//  Piscine
 //
 //  Created by Vitalii Poltavets on 12/3/17.
 //  Copyright © 2017 Vitalii Poltavets. All rights reserved.

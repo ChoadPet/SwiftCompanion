@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D7BFEED1FD45CD5004AD929"
-               BuildableName = "Swift_Companion.app"
-               BlueprintName = "Swift_Companion"
-               ReferencedContainer = "container:Swift_Companion.xcodeproj">
+               BlueprintIdentifier = "1D7BFF271FD4708C004AD929"
+               BuildableName = "Piscine.app"
+               BlueprintName = "Piscine"
+               ReferencedContainer = "container:Piscine.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D7BFF011FD45CD6004AD929"
-               BuildableName = "Swift_CompanionTests.xctest"
-               BlueprintName = "Swift_CompanionTests"
-               ReferencedContainer = "container:Swift_Companion.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D7BFF0C1FD45CD6004AD929"
-               BuildableName = "Swift_CompanionUITests.xctest"
-               BlueprintName = "Swift_CompanionUITests"
-               ReferencedContainer = "container:Swift_Companion.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D7BFEED1FD45CD5004AD929"
-            BuildableName = "Swift_Companion.app"
-            BlueprintName = "Swift_Companion"
-            ReferencedContainer = "container:Swift_Companion.xcodeproj">
+            BlueprintIdentifier = "1D7BFF271FD4708C004AD929"
+            BuildableName = "Piscine.app"
+            BlueprintName = "Piscine"
+            ReferencedContainer = "container:Piscine.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D7BFEED1FD45CD5004AD929"
-            BuildableName = "Swift_Companion.app"
-            BlueprintName = "Swift_Companion"
-            ReferencedContainer = "container:Swift_Companion.xcodeproj">
+            BlueprintIdentifier = "1D7BFF271FD4708C004AD929"
+            BuildableName = "Piscine.app"
+            BlueprintName = "Piscine"
+            ReferencedContainer = "container:Piscine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D7BFEED1FD45CD5004AD929"
-            BuildableName = "Swift_Companion.app"
-            BlueprintName = "Swift_Companion"
-            ReferencedContainer = "container:Swift_Companion.xcodeproj">
+            BlueprintIdentifier = "1D7BFF271FD4708C004AD929"
+            BuildableName = "Piscine.app"
+            BlueprintName = "Piscine"
+            ReferencedContainer = "container:Piscine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
