@@ -8,18 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var username: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        print("viewDidLoad")
+        self.username.delegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // pressing Return key to hide keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
-
-
+    
+    @IBAction func touchingSearch(_ sender: UIButton) {
+        let button = sender.currentTitle!
+        if (username.text?.isEmpty)! {
+            print("Empty")
+        } else {
+            print("typed: \(username.text!)")
+        }
+        print("\(String(describing: button)) touched")
+    }
 }
 
