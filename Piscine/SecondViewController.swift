@@ -1,5 +1,5 @@
 //
-//  UserInfoViewController.swift
+//  SecondViewController.swift
 //  Piscine
 //
 //  Created by Vitalii Poltavets on 12/8/17.
@@ -8,10 +8,12 @@
 
 import UIKit
 
-class UserInfoViewController: UIViewController {
+class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
