@@ -10,26 +10,27 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var username: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
-        self.username.delegate = self
+
+        warningLabel.isHidden = true
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
-    
-    // pressing Return key to hide keyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
-    @IBAction func touchingSearch(_ sender: UIButton) {
+
+   
+    @IBAction func searchButton(_ sender: UIButton) {
         let button = sender.currentTitle!
         if (username.text?.isEmpty)! {
-            print("Empty")
+            warningLabel.isHidden = false
         } else {
-            print("typed: \(username.text!)")
+            print("Looking for: [\(username.text!)] user")
+            warningLabel.text = "Empty field. Please enter username"
+            warningLabel.isHidden = true
+            performSegue(withIdentifier: "toSecondView", sender: self)
         }
         print("\(String(describing: button)) touched")
     }

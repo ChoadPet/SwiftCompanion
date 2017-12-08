@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Piscine" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,42 +22,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRJ-sn-yYn">
-                                <rect key="frame" x="105" y="280" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="Gyr-70-UoM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44w-km-Al2">
+                                <rect key="frame" x="16" y="318" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnC-wS-z6t">
-                                <rect key="frame" x="105" y="318" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="SearchButton">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrv-qJ-Zu3">
+                                <rect key="frame" x="158.5" y="356" width="57" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="touchingSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="04q-Ex-5MD"/>
-                                    <segue destination="DgA-7g-Gtu" kind="show" id="cnp-oT-gqH"/>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1j-v2-gmK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnC-mJ-HXA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="27"/>
+                                <color key="backgroundColor" red="1" green="0.85018782900000001" blue="0.03522624555" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="vIJ-8C-cTT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xrv-qJ-Zu3" firstAttribute="centerX" secondItem="44w-km-Al2" secondAttribute="centerX" id="1lZ-bD-ikW"/>
+                            <constraint firstItem="Gyr-70-UoM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="9J6-tz-f6r"/>
+                            <constraint firstItem="Gyr-70-UoM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FEX-9e-sPc"/>
+                            <constraint firstItem="rnC-mJ-HXA" firstAttribute="leading" secondItem="Gyr-70-UoM" secondAttribute="leading" id="Jch-ih-Ofq"/>
+                            <constraint firstItem="rnC-mJ-HXA" firstAttribute="trailing" secondItem="Gyr-70-UoM" secondAttribute="trailing" id="MYh-LA-Nc2"/>
+                            <constraint firstItem="xrv-qJ-Zu3" firstAttribute="top" secondItem="44w-km-Al2" secondAttribute="bottom" constant="8" symbolic="YES" id="Ofg-8T-J5n"/>
+                            <constraint firstItem="rnC-mJ-HXA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Pbt-hy-Yka"/>
+                            <constraint firstItem="44w-km-Al2" firstAttribute="centerX" secondItem="Gyr-70-UoM" secondAttribute="centerX" id="SVe-zM-k9Z"/>
+                            <constraint firstItem="44w-km-Al2" firstAttribute="centerY" secondItem="Gyr-70-UoM" secondAttribute="centerY" id="UmR-ad-2cT"/>
+                            <constraint firstItem="44w-km-Al2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XMx-mv-43f"/>
+                            <constraint firstItem="Gyr-70-UoM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="owA-J4-Asq"/>
+                            <constraint firstItem="Gyr-70-UoM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uDa-FG-jc3"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="JO8-BN-5qF"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="JO8-BN-5qF"/>
                     <connections>
-                        <outlet property="username" destination="IRJ-sn-yYn" id="LrC-m4-mky"/>
+                        <outlet property="username" destination="44w-km-Al2" id="qjC-He-QCn"/>
+                        <outlet property="warningLabel" destination="rnC-mJ-HXA" id="Aml-9T-gmP"/>
+                        <segue destination="DgA-7g-Gtu" kind="show" identifier="toSecondView" id="teo-RI-XTL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055.2" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--User Info View Controller-->
         <scene sceneID="2vQ-qd-Vc0">
             <objects>
-                <viewController id="DgA-7g-Gtu" sceneMemberID="viewController">
+                <viewController id="DgA-7g-Gtu" customClass="UserInfoViewController" customModule="Piscine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fYy-bu-CoE"/>
                         <viewControllerLayoutGuide type="bottom" id="5mq-Mh-pC2"/>
@@ -99,4 +125,7 @@
             <point key="canvasLocation" x="116" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-image" width="4266" height="2049"/>
+    </resources>
 </document>

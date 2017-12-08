@@ -12,6 +12,7 @@
 		1D7BFF311FD4708C004AD929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7BFF2F1FD4708C004AD929 /* Main.storyboard */; };
 		1D7BFF331FD4708C004AD929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7BFF321FD4708C004AD929 /* Assets.xcassets */; };
 		1D7BFF361FD4708C004AD929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7BFF341FD4708C004AD929 /* LaunchScreen.storyboard */; };
+		1DE8DD271FDA8BD00086F6F8 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8DD261FDA8BD00086F6F8 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1D7BFF321FD4708C004AD929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D7BFF351FD4708C004AD929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D7BFF371FD4708C004AD929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DE8DD261FDA8BD00086F6F8 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				1D7BFF2B1FD4708C004AD929 /* AppDelegate.swift */,
 				1D7BFF2D1FD4708C004AD929 /* ViewController.swift */,
+				1DE8DD261FDA8BD00086F6F8 /* UserInfoViewController.swift */,
 				1D7BFF2F1FD4708C004AD929 /* Main.storyboard */,
 				1D7BFF321FD4708C004AD929 /* Assets.xcassets */,
 				1D7BFF341FD4708C004AD929 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D7BFF2E1FD4708C004AD929 /* ViewController.swift in Sources */,
+				1DE8DD271FDA8BD00086F6F8 /* UserInfoViewController.swift in Sources */,
 				1D7BFF2C1FD4708C004AD929 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +303,7 @@
 				1D7BFF3C1FD4708C004AD929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
