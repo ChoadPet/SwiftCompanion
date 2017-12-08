@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     
     var myToken: String?
-//    var userDate: UserDefaults!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +50,8 @@ class ViewController: UIViewController {
     }
     
     func getUser (access_token: String, user: String) {
-        
-        let userData: UserDefaults = UserDefaults.standard
+        var student = Student()
+//        let userData: UserDefaults = UserDefaults.standard
         let url = URL(string: "https://api.intra.42.fr/v2/users/\(user)?access_token=\(access_token)")
         let request = URLRequest(url: url! as URL)
         let task = URLSession.shared.dataTask(with: request) {
@@ -62,33 +61,18 @@ class ViewController: UIViewController {
             } else if let d = data {
                 do {
                     let dic = try JSONSerialization.jsonObject(with: d, options: []) as! [String:Any]
-                    //                    print("\(dic.description)")
                     if !dic.isEmpty {
                         if let login = dic["login"] as? String {
-                            userData.set(login, forKey: "login")
-                            userData.synchronize()
+                            student.login = login
                         }
                         if let email = dic["email"] as? String {
-                            userData.set(email, forKey: "email")
+                            student.email = email
                         }
-//                        if let phone = dic["phone"] as? String {
-//
-//                        }
-//                        if let first_name = dic["first_name"] as? String {
-//
-//                        }
-//                        if let last_name = dic["last_name"] as? String {
-//
-//                        }
-//                        if let wallet = dic["wallet"] as? Int {
-//
-//                        }
-//                        if let corrections = dic["correction_point"] as? Int {
-//
-//                        }
-                        print(userData.value(forKey: "login")!)
+                        if let phone = dic["phone"] as? String {
+                            student.phone = phone
+                        }
                     } else {
-                        print("User not found!")
+                        print("No user found!")
                     }
                 }
                 catch (let err){
@@ -97,7 +81,6 @@ class ViewController: UIViewController {
             }
         }
         task.resume()
-        
     }
     
     func dismissKeyboard() {
@@ -107,6 +90,7 @@ class ViewController: UIViewController {
     @IBAction func searchButton(_ sender: UIButton) {
         if (username.text?.isEmpty)! {
             warningLabel.isHidden = false
+            warningLabel.backgroundColor = UIColor.yellow
             warningLabel.text = "Empty field. Please enter username"
         } else {
             print("Looking for: [\(username.text!)] user")
