@@ -11,12 +11,19 @@ import UIKit
 
 struct Student {
     
+    var imagePath: String?
+    var firstName: String?
+    var lastName: String?
     var login: String?
     var email: String?
     var phone: String?
-    var image: URL?
+    var wallet: Int?
+    var corrections: Int?
+    var location: String?
 }
 
 struct Skills {
+    
+    
     
 }
