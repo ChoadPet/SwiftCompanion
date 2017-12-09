@@ -1,19 +1,19 @@
-//
-//  ViewController.swift
-//  Piscine
-//
-//  Created by Vitalii Poltavets on 12/3/17.
-//  Copyright © 2017 Vitalii Poltavets. All rights reserved.
-//
 
 import UIKit
+
+extension String {
+    func removingWhitespaces() -> String {
+        return components(separatedBy: .whitespaces).joined()
+    }
+}
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var username: UITextField!
     
-    var myToken: String?
+    var token: String?
+    var student = Student()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
             } else if let d = data {
                 do {
                     let dic = try JSONSerialization.jsonObject(with: d, options: []) as! [String:Any]
-                    self.myToken = (dic["access_token"] as? String)!
+                    self.token = (dic["access_token"] as? String)!
                 }
                 catch (let err){
                     print(err)
@@ -49,36 +49,22 @@ class ViewController: UIViewController {
         task.resume()
     }
     
-    func getUser (access_token: String, user: String) {
-        var student = Student()
-//        let userData: UserDefaults = UserDefaults.standard
+    func getUser(access_token: String, user: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
         let url = URL(string: "https://api.intra.42.fr/v2/users/\(user)?access_token=\(access_token)")
         let request = URLRequest(url: url! as URL)
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
-            if error != nil {
-                print(error.debugDescription)
-            } else if let d = data {
+            if let data = data {
                 do {
-                    let dic = try JSONSerialization.jsonObject(with: d, options: []) as! [String:Any]
-                    if !dic.isEmpty {
-                        if let login = dic["login"] as? String {
-                            student.login = login
-                        }
-                        if let email = dic["email"] as? String {
-                            student.email = email
-                        }
-                        if let phone = dic["phone"] as? String {
-                            student.phone = phone
-                        }
-                    } else {
-                        print("No user found!")
+                    if let response = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        completion(response, nil)
                     }
                 }
-                catch (let err){
-                    print(err)
+                catch (let error) {
+                    print(error)
                 }
             }
+            completion(nil, error)
         }
         task.resume()
     }
@@ -87,14 +73,54 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let secondVC: SecondViewController = segue.destination as! SecondViewController
+        secondVC.studentInfo = student
+    }
+
     @IBAction func searchButton(_ sender: UIButton) {
         if (username.text?.isEmpty)! {
             warningLabel.isHidden = false
             warningLabel.backgroundColor = UIColor.yellow
             warningLabel.text = "Empty field. Please enter username"
         } else {
-            print("Looking for: [\(username.text!)] user")
-            getUser(access_token: self.myToken!, user: username.text!)
+            let userName = (username.text?.removingWhitespaces())!
+            print("Looking for: [\(userName)] user")
+            if let token = self.token {
+                getUser(access_token: token, user: userName, completion: { (response, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                    if let response = response {
+                        if !response.isEmpty {
+                            if let login = response["login"] as? String {
+                                self.student.login = login
+                                print("inside " + login)
+                            }
+                            if let email = response["email"] as? String {
+                                self.student.email = email
+                                print("inside " + email)
+                            }
+                            if let phone = response["phone"] as? String {
+                                self.student.phone = phone
+                                print("inside " + phone)
+                            } else {
+                                self.student.phone = "no phone number"
+                            }
+//                            if let cursus = response["cursus_users"] as? [String: Any?] {
+//                                if let skills = cursus["skills"] as? [String: Any?] {
+//                                    print(skills)
+//                                }
+//                            }
+                        } else {
+                            self.warningLabel.isHidden = false
+                            self.warningLabel.backgroundColor = UIColor.red
+                            self.warningLabel.text = "No user found!"
+                        }
+                    }
+                })
+            }
+
             warningLabel.isHidden = true
             performSegue(withIdentifier: "toSecondView", sender: self)
         }

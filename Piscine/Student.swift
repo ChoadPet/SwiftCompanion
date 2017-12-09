@@ -11,8 +11,12 @@ import UIKit
 
 struct Student {
     
-    var login = ""
-    var email = ""
-    var phone = ""
+    var login: String?
+    var email: String?
+    var phone: String?
+    var image: URL?
+}
+
+struct Skills {
     
 }
