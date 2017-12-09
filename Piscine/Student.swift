@@ -20,10 +20,13 @@ struct Student {
     var wallet: Int?
     var corrections: Int?
     var location: String?
+    
+    var level: String?
+//    var skills: [Skills]
 }
 
-struct Skills {
-    
-    
-    
-}
+//struct Skills {
+//
+//
+//}
+

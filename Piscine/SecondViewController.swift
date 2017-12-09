@@ -18,6 +18,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var correctionLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
     @IBOutlet weak var studentImage: UIImageView!
+    @IBOutlet weak var levelLbl: UILabel!
     
     var studentInfo: Student?
     
@@ -51,6 +52,11 @@ class SecondViewController: UIViewController {
             let url = URL(string: path)
             let data = try? Data(contentsOf: url!)
             studentImage.image = UIImage(data: data!)
+        }
+        
+        //Not done!
+        if let level = studentInfo?.level {
+            levelLbl.text = level
         }
     }
 }

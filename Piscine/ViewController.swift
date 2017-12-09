@@ -123,9 +123,10 @@ class ViewController: UIViewController {
                             } else {
                                 self.student.location = "Unavailable"
                             }
+                            //TODO some problem with type
                             if let cursus = response["cursus_users"] as? [String: Any?] {
-                                if let skills = cursus["skills"] as? [String: Any?] {
-                                    print(skills)
+                                if let level = cursus["level"] as? String {
+                                    self.student.level = level
                                 }
                             }
                             DispatchQueue.main.async {

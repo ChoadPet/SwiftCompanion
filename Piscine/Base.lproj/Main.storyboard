@@ -144,6 +144,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeD-Da-CxS">
+                                <rect key="frame" x="166" y="245" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -151,6 +158,7 @@
                         <outlet property="correctionLbl" destination="5i6-Jz-SWF" id="vPx-KS-MDQ"/>
                         <outlet property="emailLbl" destination="mj7-jm-3e0" id="yCN-il-Hum"/>
                         <outlet property="fullName" destination="4Up-Yr-y4v" id="1RH-Oa-fPJ"/>
+                        <outlet property="levelLbl" destination="NeD-Da-CxS" id="kaO-dW-fXv"/>
                         <outlet property="locationLbl" destination="I9E-8d-r9L" id="acF-nj-wEM"/>
                         <outlet property="loginLbl" destination="0FV-qI-9gG" id="pZa-zY-Aya"/>
                         <outlet property="phoneLbl" destination="o6h-rs-beK" id="UuG-bh-7Rn"/>
