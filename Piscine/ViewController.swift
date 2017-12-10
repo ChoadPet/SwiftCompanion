@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        assignbackground()
         warningLabel.isHidden = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -72,6 +73,13 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    func assignbackground() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "background-image")
+        backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let secondVC: SecondViewController = segue.destination as! SecondViewController
         secondVC.studentInfo = student
@@ -124,9 +132,22 @@ class ViewController: UIViewController {
                                 self.student.location = "Unavailable"
                             }
                             //TODO some problem with type
-                            if let cursus = response["cursus_users"] as? [String: Any?] {
-                                if let level = cursus["level"] as? String {
+                            if let dictionary = response["cursus_users"] as? [NSDictionary] {
+                                var cursus = NSDictionary()
+                                for course in dictionary {
+                                    if course.value(forKey: "cursus_id") as? Int == 1 {
+                                        cursus = course
+                                    }
+                                }
+                                if let level = cursus["level"] as? Float {
                                     self.student.level = level
+                                } else {
+                                    self.student.level = 0.0
+                                }
+                                if let dictionary = cursus["skills"] as? [NSDictionary] {
+                                    for skill in dictionary {
+                                        self.student.skills
+                                    }
                                 }
                             }
                             DispatchQueue.main.async {

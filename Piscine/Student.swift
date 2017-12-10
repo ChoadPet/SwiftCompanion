@@ -21,12 +21,14 @@ struct Student {
     var corrections: Int?
     var location: String?
     
-    var level: String?
-//    var skills: [Skills]
+    var level: Float?
+    var skills: [Skills]?
+    
 }
 
-//struct Skills {
-//
-//
-//}
+struct Skills {
+    
+    var name: String?
+    var level: Float?
+}
 
