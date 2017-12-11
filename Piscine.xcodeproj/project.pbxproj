@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D79A1831FDE995F0081354D /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79A1821FDE995F0081354D /* UserInfoTableViewController.swift */; };
+		1D79A1851FDEA6E60081354D /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79A1841FDEA6E50081354D /* UserInfoTableViewCell.swift */; };
+		1D79A1871FDEAAE50081354D /* SkillsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D79A1861FDEAAE50081354D /* SkillsTableViewCell.swift */; };
 		1D7BFF2C1FD4708C004AD929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7BFF2B1FD4708C004AD929 /* AppDelegate.swift */; };
 		1D7BFF2E1FD4708C004AD929 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7BFF2D1FD4708C004AD929 /* ViewController.swift */; };
 		1D7BFF311FD4708C004AD929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7BFF2F1FD4708C004AD929 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D79A1821FDE995F0081354D /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
+		1D79A1841FDEA6E50081354D /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		1D79A1861FDEAAE50081354D /* SkillsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsTableViewCell.swift; sourceTree = "<group>"; };
 		1D7BFF281FD4708C004AD929 /* Piscine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piscine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7BFF2B1FD4708C004AD929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D7BFF2D1FD4708C004AD929 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D79A1811FDE991C0081354D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D7BFF2B1FD4708C004AD929 /* AppDelegate.swift */,
+				1D7BFF341FD4708C004AD929 /* LaunchScreen.storyboard */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 		1D7BFF1F1FD4708C004AD929 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +73,16 @@
 		1D7BFF2A1FD4708C004AD929 /* Piscine */ = {
 			isa = PBXGroup;
 			children = (
-				1D7BFF2B1FD4708C004AD929 /* AppDelegate.swift */,
 				1DE8DD321FDAECEF0086F6F8 /* Student.swift */,
 				1D7BFF2D1FD4708C004AD929 /* ViewController.swift */,
 				1DE8DD301FDAD78D0086F6F8 /* SecondViewController.swift */,
+				1D79A1821FDE995F0081354D /* UserInfoTableViewController.swift */,
+				1D79A1841FDEA6E50081354D /* UserInfoTableViewCell.swift */,
+				1D79A1861FDEAAE50081354D /* SkillsTableViewCell.swift */,
 				1D7BFF2F1FD4708C004AD929 /* Main.storyboard */,
 				1D7BFF321FD4708C004AD929 /* Assets.xcassets */,
-				1D7BFF341FD4708C004AD929 /* LaunchScreen.storyboard */,
 				1D7BFF371FD4708C004AD929 /* Info.plist */,
+				1D79A1811FDE991C0081354D /* Support Files */,
 			);
 			path = Piscine;
 			sourceTree = "<group>";
@@ -143,7 +160,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D79A1851FDEA6E60081354D /* UserInfoTableViewCell.swift in Sources */,
+				1D79A1831FDE995F0081354D /* UserInfoTableViewController.swift in Sources */,
 				1DE8DD311FDAD78D0086F6F8 /* SecondViewController.swift in Sources */,
+				1D79A1871FDEAAE50081354D /* SkillsTableViewCell.swift in Sources */,
 				1D7BFF2E1FD4708C004AD929 /* ViewController.swift in Sources */,
 				1D7BFF2C1FD4708C004AD929 /* AppDelegate.swift in Sources */,
 				1DE8DD331FDAECEF0086F6F8 /* Student.swift in Sources */,

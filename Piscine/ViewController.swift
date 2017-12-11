@@ -79,11 +79,16 @@ class ViewController: UIViewController {
         backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let secondVC: SecondViewController = segue.destination as! SecondViewController
+        let secondVC: UserInfoTableViewController = segue.destination as! UserInfoTableViewController
         secondVC.studentInfo = student
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let secondVC: SecondViewController = segue.destination as! SecondViewController
+//        secondVC.studentInfo = student
+//    }
     
     @IBAction func searchButton(_ sender: UIButton) {
         if (username.text?.isEmpty)! {
@@ -146,12 +151,25 @@ class ViewController: UIViewController {
                                 }
                                 if let dictionary = cursus["skills"] as? [NSDictionary] {
                                     for skill in dictionary {
-                                        self.student.skills
+                                        self.student.skills.append(Skills(name: skill.value(forKey: "name") as? String, level: skill.value(forKey: "level") as? Float))
+                                    }
+                                }
+                            }
+                            if let dictionary = response["projects_users"] as? [NSDictionary] {
+                                var projects = NSDictionary()
+                                for project in dictionary {
+                                    projects = project
+                                    if let success = projects["validated?"] as? Bool {
+                                        if let mark = projects["final_mark"] as?  Int {
+                                            if let projectInfo = projects["project"] as? [String: Any?] {
+                                                self.student.projects.append(Projects(finalMark: mark, name: projectInfo["name"] as? String, success: success))
+                                            }
+                                        }
                                     }
                                 }
                             }
                             DispatchQueue.main.async {
-                                self.performSegue(withIdentifier: "toSecondView", sender: self)
+                                self.performSegue(withIdentifier: "toUserInfo", sender: self)
                             }
                         } else {
                             print("User not found!")

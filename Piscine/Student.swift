@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 struct Student {
-    
     var imagePath: String?
     var firstName: String?
     var lastName: String?
@@ -22,13 +21,17 @@ struct Student {
     var location: String?
     
     var level: Float?
-    var skills: [Skills]?
-    
+    var skills = [Skills]()
+    var projects = [Projects]()
 }
 
 struct Skills {
-    
     var name: String?
     var level: Float?
 }
 
+struct Projects {
+    var finalMark: Int?
+    var name: String?
+    var success: Bool?
+}
