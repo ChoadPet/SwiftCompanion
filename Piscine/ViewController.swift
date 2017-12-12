@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(sender:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(sender:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         assignbackground()
         warningLabel.isHidden = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
@@ -47,6 +50,20 @@ class ViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        student = Student()
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        self.view.frame.origin.y = -50 // Move view 150 points upward
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y = 0 // Move view to original position
     }
     
     func getUser(by access_token: String, with user: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
@@ -79,16 +96,12 @@ class ViewController: UIViewController {
         backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let secondVC: UserInfoTableViewController = segue.destination as! UserInfoTableViewController
         secondVC.studentInfo = student
+        
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let secondVC: SecondViewController = segue.destination as! SecondViewController
-//        secondVC.studentInfo = student
-//    }
     
     @IBAction func searchButton(_ sender: UIButton) {
         if (username.text?.isEmpty)! {
@@ -96,6 +109,7 @@ class ViewController: UIViewController {
             warningLabel.backgroundColor = UIColor.yellow
             warningLabel.text = "Empty field. Please enter username"
         } else {
+            warningLabel.isHidden = true
             let userName = (username.text?.removingWhitespaces())!
             print("Looking for: [\(userName)] user")
             if let token = self.token {
@@ -162,23 +176,33 @@ class ViewController: UIViewController {
                                     if let success = projects["validated?"] as? Bool {
                                         if let mark = projects["final_mark"] as?  Int {
                                             if let projectInfo = projects["project"] as? [String: Any?] {
-                                                self.student.projects.append(Projects(finalMark: mark, name: projectInfo["name"] as? String, success: success))
+                                                self.student.projects.append(Projects(finalMark: mark, name: projectInfo["slug"] as? String, success: success))
                                             }
                                         }
                                     }
                                 }
                             }
                             DispatchQueue.main.async {
+                                
                                 self.performSegue(withIdentifier: "toUserInfo", sender: self)
                             }
                         } else {
-                            print("User not found!")
+                            DispatchQueue.main.async {
+                                print("User not found!")
+                                self.warningLabel.isHidden = false
+                                self.warningLabel.backgroundColor = UIColor.red
+                                self.warningLabel.text = "User not found!"
+                            }
                         }
                     }
                 })
             }
-            warningLabel.isHidden = true
+//            warningLabel.isHidden = true
         }
     }
+    
+    
+    
+    
 }
 
