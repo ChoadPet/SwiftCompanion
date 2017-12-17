@@ -93,15 +93,12 @@
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
-            if indexPath.row == 0 {
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoTableViewCell", for: indexPath) as? UserInfoTableViewCell {
-                    if let student = studentInfo {
-                        cell.setUserInfo(for: student)
-                    }
-                    return cell
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoTableViewCell", for: indexPath) as? UserInfoTableViewCell {
+                if let student = studentInfo {
+                    cell.setUserInfo(for: student)
                 }
+                return cell
             }
         }
         if indexPath.section == 1 {

@@ -34,7 +34,7 @@ class SkillsTableViewCell: UITableViewCell {
         levelBar.layer.cornerRadius = 8
         levelBar.layer.borderWidth = 0.1
         levelBar.layer.borderColor = UIColor.gray.cgColor
-        levelBar.trackTintColor = UIColor.white
+        levelBar.trackTintColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
         levelBar.progressTintColor = UIColor(red:0.15, green:0.77, blue:1.00, alpha:1.0)
     }
     

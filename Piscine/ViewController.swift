@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
     
     var token: String?
     var student = Student()
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
     }
     
     func getUser(by access_token: String, with user: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
-        let url = URL(string: "https://api.intra.42.fr/v2/users/\(user)?access_token=\(access_token)")
+        let url = URL(string: "https://api.intra.42.fr/v2/users/\(user.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)?access_token=\(access_token)")
         let request = URLRequest(url: url! as URL)
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
