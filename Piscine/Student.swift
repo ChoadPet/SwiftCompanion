@@ -22,8 +22,6 @@ struct Student {
     var level: Float?
     var skills = [Skills]()
     var projects = [Projects]()
-    
-    
 }
 
 struct Skills {

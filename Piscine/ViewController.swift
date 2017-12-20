@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        request.basicRequest()
+        request.basicRequest() // Made request
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow(sender:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide(sender:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
@@ -37,16 +37,7 @@ class ViewController: UIViewController {
         self.view.frame.origin.y = 0 // Move view to original position
     }
     
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    func assignbackground() {
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background-image")
-        backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
-    }
+    func dismissKeyboard() { view.endEditing(true) }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let secondVC: UserInfoTableViewController = segue.destination as! UserInfoTableViewController
@@ -61,14 +52,15 @@ class ViewController: UIViewController {
             let userName = (username.text?.removingWhitespaces())!
             print("Looking for: [\(userName)] user")
             if let token = self.request.token {
-                self.request.getUser(by: token, with: userName, completion: { (response, error) in
+                self.request.getUser(by: token, with: userName, completion: { (response, error) in // Call get func for getting student data
                     if let error = error {
                         print(error.localizedDescription)
                     }
                     if let response = response {
                         if !response.isEmpty {
-                            self.request.setStudent(student: self.student, response: response)
+                            self.request.setStudent(student: self.student, response: response) // Set self.student data from response
                             DispatchQueue.main.async {
+                                self.username.text = ""
                                 self.performSegue(withIdentifier: "toUserInfo", sender: self)
                             }
                         } else {
@@ -80,6 +72,13 @@ class ViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    func assignbackground() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "background-image")
+        backgroundImage.contentMode =  UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
     }
     
     func styleForWarningLbl(for label: UILabel, with color: UIColor, text: String) {

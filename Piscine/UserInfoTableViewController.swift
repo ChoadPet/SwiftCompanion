@@ -13,12 +13,10 @@
     var studentInfo: Student?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()  
     }
     
     override    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if section == 0 {
             return 1
         }
@@ -100,6 +98,5 @@
         }
         return UITableViewCell()
     }
-    
     
  }
