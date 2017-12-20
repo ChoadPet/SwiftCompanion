@@ -17,6 +17,7 @@
 		1D7BFF361FD4708C004AD929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7BFF341FD4708C004AD929 /* LaunchScreen.storyboard */; };
 		1DDD199E1FDFB732009379A0 /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDD199D1FDFB732009379A0 /* ProjectsTableViewCell.swift */; };
 		1DE8DD331FDAECEF0086F6F8 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8DD321FDAECEF0086F6F8 /* Student.swift */; };
+		1DE8EA571FE96566004FF4BD /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8EA561FE96566004FF4BD /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1D7BFF371FD4708C004AD929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DDD199D1FDFB732009379A0 /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewCell.swift; sourceTree = "<group>"; };
 		1DE8DD321FDAECEF0086F6F8 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		1DE8EA561FE96566004FF4BD /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				1DE8DD321FDAECEF0086F6F8 /* Student.swift */,
+				1DE8EA561FE96566004FF4BD /* Request.swift */,
 				1D7BFF2D1FD4708C004AD929 /* ViewController.swift */,
 				1D79A1821FDE995F0081354D /* UserInfoTableViewController.swift */,
 				1D79A1841FDEA6E50081354D /* UserInfoTableViewCell.swift */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D79A1851FDEA6E60081354D /* UserInfoTableViewCell.swift in Sources */,
+				1DE8EA571FE96566004FF4BD /* Request.swift in Sources */,
 				1D79A1831FDE995F0081354D /* UserInfoTableViewController.swift in Sources */,
 				1DDD199E1FDFB732009379A0 /* ProjectsTableViewCell.swift in Sources */,
 				1D79A1871FDEAAE50081354D /* SkillsTableViewCell.swift in Sources */,
@@ -233,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -277,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

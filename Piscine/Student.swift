@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct Student {
     var imagePath: String?
@@ -23,6 +22,8 @@ struct Student {
     var level: Float?
     var skills = [Skills]()
     var projects = [Projects]()
+    
+    
 }
 
 struct Skills {

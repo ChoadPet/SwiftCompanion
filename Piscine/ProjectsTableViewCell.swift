@@ -33,6 +33,4 @@ class ProjectsTableViewCell: UITableViewCell {
         projectMarkLbl.text = text
         projectMarkLbl.textColor = color
     }
-    
-
 }

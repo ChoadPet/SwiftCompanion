@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jcl-rQ-gYo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jcl-rQ-gYo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnC-mJ-HXA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="27"/>
+                                <rect key="frame" x="0.0" y="84" width="375" height="27"/>
                                 <color key="backgroundColor" red="1" green="0.85018782900000001" blue="0.03522624555" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="XC6-9q-fI0"/>
@@ -96,7 +95,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mDD-dM-pXG">
-                                            <rect key="frame" x="8" y="8" width="347" height="198"/>
+                                            <rect key="frame" x="8" y="8" width="347" height="208"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-n3-svL">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="148.5"/>
@@ -163,7 +162,7 @@
                                             <rect key="frame" x="20" y="277.5" width="335" height="2"/>
                                         </progressView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuQ-KK-Cea">
-                                            <rect key="frame" x="20" y="231" width="335" height="26.5"/>
+                                            <rect key="frame" x="20" y="241" width="335" height="26.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -175,7 +174,7 @@
                                         <constraint firstAttribute="trailing" secondItem="mDD-dM-pXG" secondAttribute="trailing" constant="20" symbolic="YES" id="Myc-yC-nTG"/>
                                         <constraint firstAttribute="bottom" secondItem="oaf-be-5Wv" secondAttribute="bottom" constant="20" symbolic="YES" id="Ty9-K1-DIe"/>
                                         <constraint firstItem="oaf-be-5Wv" firstAttribute="leading" secondItem="63F-zu-Lh0" secondAttribute="leading" constant="20" symbolic="YES" id="c5t-qM-9jw"/>
-                                        <constraint firstItem="oaf-be-5Wv" firstAttribute="top" secondItem="BuQ-KK-Cea" secondAttribute="bottom" constant="20" id="dVb-8F-HtJ"/>
+                                        <constraint firstItem="oaf-be-5Wv" firstAttribute="top" secondItem="BuQ-KK-Cea" secondAttribute="bottom" constant="10" id="dVb-8F-HtJ"/>
                                         <constraint firstItem="BuQ-KK-Cea" firstAttribute="leading" secondItem="63F-zu-Lh0" secondAttribute="leading" constant="20" symbolic="YES" id="ioQ-Ps-9lI"/>
                                         <constraint firstItem="mDD-dM-pXG" firstAttribute="top" secondItem="63F-zu-Lh0" secondAttribute="top" constant="8" id="o6m-qv-XLg"/>
                                         <constraint firstAttribute="trailing" secondItem="oaf-be-5Wv" secondAttribute="trailing" constant="20" symbolic="YES" id="whl-eZ-2hc"/>
@@ -247,7 +246,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3P-sx-BXu">
                                             <rect key="frame" x="291" y="12" width="76" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="76" id="8Nu-JD-TWH"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="8Nu-JD-TWH"/>
                                                 <constraint firstAttribute="height" constant="50" id="kNf-XZ-uRS"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>

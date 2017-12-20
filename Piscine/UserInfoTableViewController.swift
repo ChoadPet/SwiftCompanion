@@ -41,51 +41,31 @@
     
     override    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            let view = UIView()
-            view.backgroundColor = UIColor(red:0.91, green:0.98, blue:1.00, alpha:1.0)
-            
-            let imageView = UIImageView(image: #imageLiteral(resourceName: "userInfo"))
-            imageView.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
-            view.addSubview(imageView)
-            
-            let label = UILabel()
-            label.text = "User info"
-            label.frame = CGRect(x: 45, y: 5, width: 100, height: 35)
-            view.addSubview(label)
-            
-            return view
+            return addHearder(with: #imageLiteral(resourceName: "userInfo"), and: "Main info")
         }
         if section == 1 {
-            let view = UIView()
-            view.backgroundColor = UIColor(red:0.91, green:0.98, blue:1.00, alpha:1.0)
-            
-            let imageView = UIImageView(image: #imageLiteral(resourceName: "skill"))
-            imageView.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
-            view.addSubview(imageView)
-            
-            let label = UILabel()
-            label.text = "Skills"
-            label.frame = CGRect(x: 45, y: 5, width: 100, height: 35)
-            view.addSubview(label)
-            
-            return view
+            return addHearder(with: #imageLiteral(resourceName: "skill"), and: "Skills")
         }
         if section == 2 {
-            let view = UIView()
-            view.backgroundColor = UIColor(red:0.91, green:0.98, blue:1.00, alpha:1.0)
-            
-            let imageView = UIImageView(image: #imageLiteral(resourceName: "project"))
-            imageView.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
-            view.addSubview(imageView)
-            
-            let label = UILabel()
-            label.text = "Project"
-            label.frame = CGRect(x: 45, y: 5, width: 150, height: 35)
-            view.addSubview(label)
-            
-            return view
+            return addHearder(with: #imageLiteral(resourceName: "project"), and: "Projects")
         }
         return UIView()
+    }
+    
+    func addHearder(with image: UIImage, and text: String) -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor(red:0.91, green:0.98, blue:1.00, alpha:1.0)
+        
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
+        view.addSubview(imageView)
+        
+        let label = UILabel()
+        label.text = text
+        label.frame = CGRect(x: 45, y: 5, width: 200, height: 35)
+        view.addSubview(label)
+        
+        return view
     }
     
     override    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
