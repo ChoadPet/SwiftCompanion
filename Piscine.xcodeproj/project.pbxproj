@@ -47,13 +47,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D79A1811FDE991C0081354D /* Support Files */ = {
+		1D0168881FEAD7C500819CDE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1DE8DD321FDAECEF0086F6F8 /* Student.swift */,
+				1DE8EA561FE96566004FF4BD /* Request.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D0168891FEAD7F700819CDE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1D7BFF2D1FD4708C004AD929 /* ViewController.swift */,
+				1D79A1821FDE995F0081354D /* UserInfoTableViewController.swift */,
+				1D79A1841FDEA6E50081354D /* UserInfoTableViewCell.swift */,
+				1D79A1861FDEAAE50081354D /* SkillsTableViewCell.swift */,
+				1DDD199D1FDFB732009379A0 /* ProjectsTableViewCell.swift */,
 				1D7BFF2B1FD4708C004AD929 /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1D01688A1FEAD81900819CDE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D7BFF2F1FD4708C004AD929 /* Main.storyboard */,
 				1D7BFF341FD4708C004AD929 /* LaunchScreen.storyboard */,
 			);
-			path = "Support Files";
+			path = View;
 			sourceTree = "<group>";
 		};
 		1D7BFF1F1FD4708C004AD929 = {
@@ -75,17 +97,11 @@
 		1D7BFF2A1FD4708C004AD929 /* Piscine */ = {
 			isa = PBXGroup;
 			children = (
-				1DE8DD321FDAECEF0086F6F8 /* Student.swift */,
-				1DE8EA561FE96566004FF4BD /* Request.swift */,
-				1D7BFF2D1FD4708C004AD929 /* ViewController.swift */,
-				1D79A1821FDE995F0081354D /* UserInfoTableViewController.swift */,
-				1D79A1841FDEA6E50081354D /* UserInfoTableViewCell.swift */,
-				1D79A1861FDEAAE50081354D /* SkillsTableViewCell.swift */,
-				1DDD199D1FDFB732009379A0 /* ProjectsTableViewCell.swift */,
-				1D7BFF2F1FD4708C004AD929 /* Main.storyboard */,
+				1D01688A1FEAD81900819CDE /* View */,
+				1D0168891FEAD7F700819CDE /* Controller */,
+				1D0168881FEAD7C500819CDE /* Model */,
 				1D7BFF321FD4708C004AD929 /* Assets.xcassets */,
 				1D7BFF371FD4708C004AD929 /* Info.plist */,
-				1D79A1811FDE991C0081354D /* Support Files */,
 			);
 			path = Piscine;
 			sourceTree = "<group>";
