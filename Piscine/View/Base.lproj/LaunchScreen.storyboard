@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +21,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-image" translatesAutoresizingMaskIntoConstraints="NO" id="Uik-8W-UOr">
-                                <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6Q-Zi-Sqi">
+                                <rect key="frame" x="0.0" y="580" width="375" height="31"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Y6Q-Zi-Sqi" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BIa-Rb-2cK"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Y6Q-Zi-Sqi" secondAttribute="bottom" constant="56" id="I8q-jz-seh"/>
                             <constraint firstItem="Uik-8W-UOr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="cDy-7k-qZr"/>
                             <constraint firstItem="Uik-8W-UOr" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="gkL-Vq-5ru"/>
                             <constraint firstItem="Uik-8W-UOr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="h9s-g6-68v"/>
+                            <constraint firstAttribute="trailing" secondItem="Y6Q-Zi-Sqi" secondAttribute="trailing" id="kUS-ZT-EeB"/>
                             <constraint firstItem="Uik-8W-UOr" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="rlY-2C-ax7"/>
                         </constraints>
                     </view>

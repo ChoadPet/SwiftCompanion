@@ -25,6 +25,7 @@ class UserInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         levelBar.transform = levelBar.transform.scaledBy(x: 1, y: 4)
+        levelBar.layer.cornerRadius = levelBar.frame.height / 2
     }
     
     func setUserInfo(for studentInfo: Student) {
@@ -43,7 +44,7 @@ class UserInfoTableViewCell: UITableViewCell {
             let url = URL(string: path)
             let data = try? Data(contentsOf: url!)
             studentImage.image = UIImage(data: data!)
-            makeCircleImage(image: studentImage)
+            makeCircleImage(image: (studentImage)!)
         }
         if let email = studentInfo.email {
             emailLbl.text = email
@@ -77,7 +78,7 @@ class UserInfoTableViewCell: UITableViewCell {
         let progressLevel = level.truncatingRemainder(dividingBy: 1)
         levelBar.progress = progressLevel
         levelBar.clipsToBounds = true
-        levelBar.layer.cornerRadius = levelBar.frame.height / 2
+        
         levelBar.layer.borderWidth = 0.1
         levelBar.layer.borderColor = UIColor.lightGray.cgColor
         levelBar.trackTintColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
