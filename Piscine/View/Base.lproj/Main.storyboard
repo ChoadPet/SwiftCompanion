@@ -21,11 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0gX-c1-taI">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnC-mJ-HXA">
                                 <rect key="frame" x="0.0" y="64" width="375" height="27"/>
                                 <color key="backgroundColor" red="1" green="0.85018782900000001" blue="0.03522624555" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -74,7 +69,6 @@
                     <navigationItem key="navigationItem" title="Welcome" id="JO8-BN-5qF"/>
                     <connections>
                         <outlet property="searchButton" destination="xrv-qJ-Zu3" id="uLR-p2-nBL"/>
-                        <outlet property="spinner" destination="0gX-c1-taI" id="S5Y-0M-l98"/>
                         <outlet property="username" destination="44w-km-Al2" id="qjC-He-QCn"/>
                         <outlet property="warningLabel" destination="rnC-mJ-HXA" id="Aml-9T-gmP"/>
                         <segue destination="ehm-4L-DaB" kind="show" identifier="toUserInfo" id="f5j-yv-PQC"/>

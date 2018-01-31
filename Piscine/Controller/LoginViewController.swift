@@ -6,7 +6,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var token: String?
     var student = Student()
@@ -49,7 +48,7 @@ class LoginViewController: UIViewController {
         if (username.text?.isEmpty)! {
             styleForWarningLbl(for: warningLabel, with: UIColor.yellow, text: "Empty field. Please enter username!")
         } else {
-            spinner.startAnimating()
+            customActivityIndicatory(self.view)
             warningLabel.isHidden = true
             let userName = (username.text?.removingWhitespaces())!
             print("Looking for: [\(userName)] user")
@@ -63,11 +62,12 @@ class LoginViewController: UIViewController {
                             self?.request.setStudent(student: (self?.student)!, response: response) // Set self.student data from response
                             DispatchQueue.main.async {
                                 self?.username.text = ""
-                                self?.spinner.stopAnimating()
+                                self?.customActivityIndicatory((self?.view)!, startAnimate: false)
                                 self?.performSegue(withIdentifier: "toUserInfo", sender: self)
                             }
                         } else {
                             DispatchQueue.main.async { [weak self] in
+                                self?.customActivityIndicatory((self?.view)!, startAnimate: false)
                                 self?.styleForWarningLbl(for: (self?.warningLabel)!, with: UIColor.red, text: "User not found!")
                             }
                         }
@@ -88,6 +88,33 @@ class LoginViewController: UIViewController {
         label.isHidden = false
         label.backgroundColor = color
         label.text = text
+    }
+    
+    func customActivityIndicatory(_ viewContainer: UIView, startAnimate:Bool? = true) {
+        
+        let mainContainer: UIView = UIView(frame: viewContainer.frame)
+        mainContainer.center = viewContainer.center
+        mainContainer.backgroundColor = UIColor.black
+        mainContainer.alpha = 0.6
+        mainContainer.tag = 789456123
+        mainContainer.isUserInteractionEnabled = false
+        
+        let activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.frame = CGRect(x:0.0,y: 0.0,width: 40.0, height: 40.0)
+        activityIndicatorView.activityIndicatorViewStyle =
+            UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicatorView.center = CGPoint(x: mainContainer.frame.size.width / 2, y: mainContainer.frame.size.height / 2)
+        if startAnimate! {
+            mainContainer.addSubview(activityIndicatorView)
+            viewContainer.addSubview(mainContainer)
+            activityIndicatorView.startAnimating()
+        } else {
+            for subview in viewContainer.subviews {
+                if subview.tag == 789456123 {
+                    subview.removeFromSuperview()
+                }
+            }
+        }
     }
 }
 
