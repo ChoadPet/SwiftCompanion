@@ -24,17 +24,19 @@ class SkillsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 2)
+        
+        progressBar.layer.cornerRadius = 2
+        progressBar.clipsToBounds = true
+        progressBar.layer.sublayers![1].cornerRadius = 2
+        progressBar.subviews[1].clipsToBounds = true
     }
     
     func setLevelBar(for levelBar: UIProgressView, with level: Float) {
         let progressLevel = level.truncatingRemainder(dividingBy: 1)
         levelBar.progress = progressLevel
-        levelBar.clipsToBounds = true
-        levelBar.layer.cornerRadius = levelBar.frame.height / 2
         levelBar.layer.borderWidth = 0.1
         levelBar.layer.borderColor = UIColor.lightGray.cgColor
-        levelBar.trackTintColor = UIColor(red:0.98, green:0.98, blue:0.98, alpha:1.0)
+        levelBar.trackTintColor = UIColor(red:0.44, green:0.80, blue:0.96, alpha:0.4)
         levelBar.progressTintColor = UIColor(red:0.15, green:0.77, blue:1.00, alpha:1.0)
     }
 
