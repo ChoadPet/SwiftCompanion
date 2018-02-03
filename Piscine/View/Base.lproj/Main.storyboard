@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jcl-rQ-gYo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jcl-rQ-gYo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,7 +96,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mDD-dM-pXG">
-                                            <rect key="frame" x="8" y="8" width="347" height="208"/>
+                                            <rect key="frame" x="8" y="8" width="347" height="202"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kYU-n3-svL">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="148.5"/>
@@ -159,10 +160,13 @@
                                             </subviews>
                                         </stackView>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oaf-be-5Wv">
-                                            <rect key="frame" x="20" y="277.5" width="335" height="2"/>
+                                            <rect key="frame" x="20" y="271.5" width="335" height="8"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="wdS-rl-LTG"/>
+                                            </constraints>
                                         </progressView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuQ-KK-Cea">
-                                            <rect key="frame" x="20" y="241" width="335" height="26.5"/>
+                                            <rect key="frame" x="20" y="235" width="335" height="26.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -202,26 +206,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill name and level %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="90U-bn-jwO">
-                                            <rect key="frame" x="29" y="8" width="167.5" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="C5Q-DK-Er4"/>
-                                            </constraints>
+                                            <rect key="frame" x="29" y="8" width="168" height="19"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l7m-SI-jHG">
-                                            <rect key="frame" x="37" y="50" width="300" height="2"/>
+                                            <rect key="frame" x="37" y="48" width="300" height="4"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="4" id="e8i-FA-nUC"/>
+                                            </constraints>
                                         </progressView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="90U-bn-jwO" secondAttribute="trailing" id="3d1-Mj-vVU"/>
+                                        <constraint firstItem="l7m-SI-jHG" firstAttribute="top" secondItem="90U-bn-jwO" secondAttribute="bottom" constant="21" id="AGX-q4-VH4"/>
                                         <constraint firstAttribute="trailing" secondItem="l7m-SI-jHG" secondAttribute="trailing" constant="38" id="FpL-HK-HJ8"/>
-                                        <constraint firstAttribute="bottom" secondItem="90U-bn-jwO" secondAttribute="bottom" constant="45.5" id="Mab-sa-tr2"/>
-                                        <constraint firstItem="90U-bn-jwO" firstAttribute="leading" secondItem="Uju-mw-Vzp" secondAttribute="leading" constant="29" id="VkT-ih-Cy5"/>
-                                        <constraint firstItem="90U-bn-jwO" firstAttribute="top" secondItem="Uju-mw-Vzp" secondAttribute="top" constant="8" id="fFK-zb-z7L"/>
-                                        <constraint firstItem="l7m-SI-jHG" firstAttribute="top" secondItem="90U-bn-jwO" secondAttribute="bottom" constant="21" id="mX5-KL-B2k"/>
+                                        <constraint firstItem="90U-bn-jwO" firstAttribute="top" secondItem="Uju-mw-Vzp" secondAttribute="topMargin" constant="-3" id="dVa-UI-lVP"/>
                                         <constraint firstAttribute="bottom" secondItem="l7m-SI-jHG" secondAttribute="bottom" constant="22.5" id="szh-kE-3Mg"/>
+                                        <constraint firstItem="90U-bn-jwO" firstAttribute="leading" secondItem="Uju-mw-Vzp" secondAttribute="leadingMargin" constant="13" id="wjc-0U-Mty"/>
                                         <constraint firstItem="l7m-SI-jHG" firstAttribute="leading" secondItem="Uju-mw-Vzp" secondAttribute="leading" constant="37" id="xAs-i2-d7T"/>
                                     </constraints>
                                 </tableViewCellContentView>

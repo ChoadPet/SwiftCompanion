@@ -24,8 +24,10 @@ class UserInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        levelBar.transform = levelBar.transform.scaledBy(x: 1, y: 4)
-        levelBar.layer.cornerRadius = levelBar.frame.height / 2
+        levelBar.layer.cornerRadius = 4
+        levelBar.clipsToBounds = true
+        levelBar.layer.sublayers![1].cornerRadius = 4
+        levelBar.subviews[1].clipsToBounds = true
     }
     
     func setUserInfo(for studentInfo: Student) {
@@ -77,7 +79,7 @@ class UserInfoTableViewCell: UITableViewCell {
     func setLevelBar(for levelBar: UIProgressView, with level: Float) {
         let progressLevel = level.truncatingRemainder(dividingBy: 1)
         levelBar.progress = progressLevel
-        levelBar.clipsToBounds = true
+//        levelBar.clipsToBounds = true
         
         levelBar.layer.borderWidth = 0.1
         levelBar.layer.borderColor = UIColor.lightGray.cgColor
