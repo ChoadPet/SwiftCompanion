@@ -11,6 +11,7 @@ import Foundation
 class Request {
     var key: String
     var secret: String
+   
     var token: String?
     var student = Student()
     
